@@ -1,5 +1,4 @@
-# OpenLoop
-[链接](https://medium.com/@fengjinghua68/openloop-depin%E9%A1%B9%E7%9B%AE%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B%E6%8C%87%E5%8D%97-30a0e4fa0abe)
+# Runner base
 
 ```shell
 screen -S <name>  # 创建一个带名称的会话
@@ -13,10 +12,12 @@ Ctrl + A 然后按数字键（0-9）# 在窗口之间切换：
 ```
 
 ```shell
-docker build -t run .
+docker build -t my-ubuntu-container .
 
-docker run -d --name OpenLoop ubuntu:24.04 tail -f /dev/null
+docker run -d --name my-container my-ubuntu-container
+docker exec -it my-container bash
 
+# docker run -d --name OpenLoop ubuntu:24.04 tail -f /dev/null
 
 docker run -d \
   --name my-container \
